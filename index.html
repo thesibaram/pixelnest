@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelNest | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Big+Shoulders+Inline+Display:wght@400;700&family=Sofia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="stylesheet" href="styles.css"> <!-- Your external styles.css file -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 1v22M12 1h10M12 1v22M12 23H2'/%3E%3Cpath d='M22 12H2'/%3E%3Cpath d='M22 12v10M2 12V2'/%3E%3Crect x='2' y='2' width='20' height='20' rx='3'/%3E%3C/svg%3E">
+  <!-- Link Preview Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PixelNest — Portfolio">
+  <meta property="og:description" content="A creative portfolio showcasing the work and vision behind PixelNest.">
+  <meta property="og:url" content="https://thesibaram.github.io/pixelnest/index.html">
+  <meta property="og:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PixelNest — Portfolio">
+  <meta name="twitter:description" content="A creative portfolio showcasing the work and vision behind PixelNest.">
+  <meta name="twitter:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+</head>
+
+<body class="bg-white dark:bg-black text-black dark:text-white px-5 md:px-20 animate-fade-in">
+
+  <!-- Navbar -->
+  <header class="flex w-full overflow-hidden pt-10 pb-0">
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+      <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
+        <div class="header-logo">
+          <a href="index.html" class="flex items-center justify-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+              <path d="M22 12H2"></path>
+              <path d="M22 12v10M2 12V2"></path>
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+            </svg>
+            <span class="text-3xl font-freeman">PixelNest</span>
+          </a>
+        </div>
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+        </div>
+        <div id="menu"
+          :class="open ? 'h-32' : 'h-0'"
+          class="w-full transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center md:overflow-visible">
+          <ul id="ulMenu"
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-2 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-freeman text-2xl tap-highlight-transparent">PORTFOLIO
+                <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="about_me.html" class="font-freeman text-2xl tap-highlight-transparent">ABOUT ME
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="contact.html" class="font-freeman text-2xl tap-highlight-transparent">CONTACT
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="container mx-auto">
+    <h1 class="text-4xl pt-10 pb-8 font-bold font-bigshoulders">PORTFOLIO</h1>
+    <section class="text-neutral-700">
+      <div id="masonry-gallery" class="masonry-container">
+        <!-- Images will be dynamically inserted here by JavaScript -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <a href="index.html" class="flex items-center space-x-2" style="justify-content:center;display:flex;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black dark:text-white">
+                        <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+                        <path d="M22 12H2"></path>
+                        <path d="M22 12v10M2 12V2"></path>
+                        <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+                      </svg>
+                      <span class="text-2xl font-freeman">PixelNest</span>
+                    </a>
+                </div>
+                <p style="font-family:'Freeman',sans-serif;font-size:1.1rem;text-align:center;margin-top:0.5rem;">In Every Frame, A Heartbeat Lives On.</p>
+            </div>
+<div class="footer-section">
+    <h3 class="footer-heading">Navigation</h3>
+    <ul class="footer-links">
+        <li><a href="./index.html">Portfolio</a></li>
+        <li><a href="./about_me.html">About Me</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+    </ul>
+</div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Connect</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/thesibaram_cla?t=q3gV4BTfJd8W_5g4sNxm6A&s=09" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/in/sibaram-eng?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/thesibaram.cla?utm_source=qr&igsh=YjltajhvbWhhdno1" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://github.com/thesibaram" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://open.spotify.com/playlist/4WaZsUYmtf4eRsklDjxhx4?si=0757f49b46194f97&pt=69e4e7df7c329e3f177e943f3fa0e5ed" target="_blank"><i class="fab fa-spotify"></i> Spotify</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                © 2025 Sibaram Behera. All rights reserved. <br>
+                <p>Made with <span class="heart-emoji">💜</span> for <span class="clara">Clara</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Script to dynamically generate images and handle the lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('masonry-gallery');
+
+            // List of image paths and captions from your original file
+            const galleryItems = [
+              { path: 'assets/images/OTTYHOLIDAY_001.jpg', caption: "This is what 'getting away from it all' looks like." },
+              { path: 'assets/images/OTTYHOLIDAY_002.jpg', caption: "Waking up to this view is the best kind of alarm clock." },
+              { path: 'assets/images/OTTYHOLIDAY_003.jpg', caption: "Some moments are just meant to be." },
+              { path: 'assets/images/OTTYHOLIDAY_004.jpg', caption: "The best kind of therapy is a road trip with friends." },
+              { path: 'assets/images/OTTYHOLIDAY_005.jpg', caption: "On the less traveled path, with my little companion." },
+              { path: 'assets/images/OTTYHOLIDAY_006.jpg', caption: "The world is vast, and I'm just a small part of it." },
+              { path: 'assets/images/OTTYHOLIDAY_007.jpg', caption: "Fueling up for the next adventure." },
+              { path: 'assets/images/OTTYHOLIDAY_008.png', caption: "Some of the best memories are made around a table." },
+              { path: 'assets/images/OTTYHOLIDAY_009.jpg', caption: "The sky's watercolor masterpiece." },
+              { path: 'assets/images/OTTYHOLIDAY_010.jpg', caption: "The perfect end to a day of exploring." },
+              { path: 'assets/images/OTTYHOLIDAY_011.jpg', caption: "A million little lights, a million little dreams." },
+              { path: 'assets/images/OTTYHOLIDAY_012.jpg', caption: "Ooty's traffic jam." },
+              { path: 'assets/images/OTTYHOLIDAY_013.jpg', caption: "The mountain view never gets old." },
+              { path: 'assets/images/OTTYHOLIDAY_014.jpg', caption: "Where will this road take us next?" },
+              { path: 'assets/images/OTTYHOLIDAY_015.png', caption: "The perfect blend of nature and city life." },
+              { path: 'assets/images/OTTYHOLIDAY_016.jpg', caption: "Soaking up the good vibes." },
+              { path: 'assets/images/OTTYHOLIDAY_017.png', caption: "The beautiful chaos of a mountain town." },
+              { path: 'assets/images/OTTYHOLIDAY_018.jpg', caption: "Some of the best memories are the unplanned ones." },
+              { path: 'assets/images/SIH_ 001.jpg', caption: "The focus and determination of a true creator." },
+              { path: 'assets/images/SIH_ 002.jpg', caption: "Working through the night, guided by the stars." },
+              { path: 'assets/images/SIH_ 003.png', caption: "A moment of triumph to remember forever." },
+              { path: 'assets/images/SIH_ 004.jpg', caption: "A moment of inspiration that could change everything." },
+              { path: 'assets/images/Accessories.jpg', caption: "A gentle reminder that self-care matters." },
+              { path: 'assets/images/Book.jpg', caption: "A little confidence can go a long way." },
+              { path: 'assets/images/Classroom.jpg', caption: "Learning is a journey, not a destination." },
+              { path: 'assets/images/Dress.jpeg', caption: "Becoming the best version of me, one day at a time." },
+              { path: 'assets/images/VMG.jpg', caption: "The hustle and bustle of everyday life." },
+              { path: 'assets/images/COLLEGE FESTIVAL_001.jpg', caption: "Where tradition meets the stage." },
+              { path: 'assets/images/COLLEGE FESTIVAL_002.jpg', caption: "The energy of a thousand hearts." },
+              { path: 'assets/images/COLLEGE FESTIVAL_003.jpg', caption: "The crowd was silent, and her voice was everything." },
+              { path: 'assets/images/GOODNIGHT.png', caption: "Ending the day with a smile and a line of code." },
+              { path: 'assets/images/IMG20250606223129.jpg', caption: "Finding a bed anywhere is a big deal." },
+              { path: 'assets/images/OTTYHOLIDAY_ 019.jpg', caption: "Finding peace in a beautiful view." },
+              { path: 'assets/images/OTTYHOLIDAY_ 020.jpg', caption: "The town that dreams are made of." },
+              { path: 'assets/images/OTTYHOLIDAY_ 021.png', caption: "The cheerful sounds of home." },
+              { path: 'assets/images/OTTYHOLIDAY_ 022.jpg', caption: "The beginning of a great memory." },
+              { path: 'assets/images/OTTYHOLIDAY_ 023.jpg', caption: "The journey is always better with the right wheels." },
+              { path: 'assets/images/OTTYHOLIDAY_ 024.jpg', caption: "The simple beauty of a day in Ooty." },
+              { path: 'assets/images/OTTYHOLIDAY_ 025.png', caption: "My other car is a scooter." },
+              { path: 'assets/images/OTTYHOLIDAY_ 026.png', caption: "The colorful houses on the hillside made this view extra special." },
+              { path: 'assets/images/OTTYHOLIDAY_ 027.jpg', caption: "When you're hungry, but the view is too good to leave." },
+              { path: 'assets/images/PRATICLE.jpg', caption: "A desk full of dreams and a little bit of magic." },
+              { path: 'assets/images/SIH_005.png', caption: "The calm before the storm." },
+              { path: 'assets/images/SIH_006.jpg', caption: "The king of the yard." },
+              { path: 'assets/images/SIH_007.jpg', caption: "The gateway to a new beginning." },
+              { path: 'assets/images/THEONEWAY.jpg', caption: "Every path has its own story." },
+              { path: 'assets/images/THEPERSON.jpg', caption: "Two wheels and a whole lot of freedom." },
+              { path: 'assets/images/CLASSROOM_ 001.jpg', caption: "The passion of a teacher shines through." },
+              { path: 'assets/images/CLASSROOM_ 002.jpg', caption: "Some people just make difficult things look easy." },
+              { path: 'assets/images/LAPTOP_ 001.jpg', caption: "Finding beauty in the logic and structure of code." },
+              { path: 'assets/images/LAPTOP_ 002.jpg', caption: "The small things that make up a big project." },
+              { path: 'assets/images/LAPTOP_ 003.jpg', caption: "My laptop's personality is better than mine." },
+              { path: 'assets/images/STUDY_ 001.jpg', caption: "The late-night hustle." },
+              { path: 'assets/images/TRAVELLING_ 001.jpg', caption: "The best views are from a window seat." },
+              { path: 'assets/images/TRAVELLING_ 002.jpg', caption: "The best views are from the open door of a train." },
+              { path: 'assets/images/TRAVELLING_ 003.jpg', caption: "The best views are the ones that make you feel small." },
+              { path: 'assets/images/TRAVELLING_ 004.jpg', caption: "The little things that make life beautiful." },
+              { path: 'assets/images/TRAVELLING_ 005.jpg', caption: "The best way to see the world is on two wheels." },
+              { path: 'assets/images/TRAVELLING_ 006.jpg', caption: "The stars are out, but the city lights are brighter." },
+              { path: 'assets/images/TRAVELLING_ 007.jpg', caption: "A beautiful moment of a city that never sleeps." },
+              { path: 'assets/images/TRAVELLING_ 008.jpg', caption: "A simple moment on a beautiful day." },
+              { path: 'assets/images/TRAVELLING_ 009.jpg', caption: "The hard work that goes into a masterpiece." },
+              { path: 'assets/images/TRAVELLING_ 010.jpg', caption: " The beginning of a new adventure." },
+              { path: 'assets/images/COLLEGE_001.jpg', caption: "The sky is a canvas, and the trees are the art." },
+              { path: 'assets/images/COLLEGE_002.jpg', caption: "A beautiful day for a walk with friends." },
+              {path: 'assets/images/Hostel_mess_food_001.jpg', caption: "Instant happiness, just add sauce." },
+              {path: 'assets/images/Hostel_mess_food_002.jpg', caption: "When you can't decide, get a bit of everything." },
+              {path: 'assets/images/Hostel_mess_food_003.jpg', caption: "This plate is a masterpiece." },
+              {path: 'assets/images/Hostel_mess_food_004.jpg', caption: "Simple food, great taste." },
+              {path: 'assets/images/Hostel_mess_food_005.jpg', caption: "Yes, the chili is mandatory." },
+              {path: 'assets/images/Hostel_mess_food_006.jpg', caption: "The kind of meal that makes you feel instantly better." },
+              {path: 'assets/images/Hostel_mess_food_007.jpg', caption: "I deserve this... and that little sweet too." },
+              {path: 'assets/images/Hostel_mess_food_008.jpg', caption: "A comforting, well-rounded meal." },
+              {path: 'assets/images/Handbook.jpg', caption: "Learning doesn't have to stay in the classroom." },
+              {path: 'assets/images/A_Person_Thinking.jpg', caption: "Finding clarity in a moment of quiet reflection." },
+              {path: 'assets/images/Sony_Headphone_Wh-ch720n.jpg', caption: "New noise cancellation, who dis?" },
+              {path: 'assets/images/Book_Fair.jpg', caption: "Surrounded by endless stories and endless learning." },
+              {path: 'assets/images/Ganesh_Puja.jpg', caption: "May the remover of obstacles bless your new beginnings." },
+              {path: 'assets/images/Time_Is_Important.jpg', caption: "Time is the most valuable asset." },
+              {path: 'assets/images/Creatvie.jpg', caption: "Focus on what matters, even if it's just the binding." }
+            ];
+
+            // Function to dynamically create a gallery item
+            const createGalleryItem = (item) => {
+              const galleryItem = document.createElement('div');
+              galleryItem.className = 'masonry-item';
+
+              const link = document.createElement('a');
+              link.href = item.path;
+              link.setAttribute('data-fancybox', 'gallery');
+
+              const img = document.createElement('img');
+              img.src = item.path;
+              img.alt = item.caption;
+              img.loading = 'lazy';
+              img.className = 'block h-full w-full object-cover object-center';
+
+              const captionOverlay = document.createElement('div');
+              captionOverlay.className = 'comic-caption';
+              captionOverlay.textContent = item.caption;
+
+              link.appendChild(img);
+              galleryItem.appendChild(link);
+              galleryItem.appendChild(captionOverlay);
+
+              return galleryItem;
+            };
+
+            // Function to shuffle an array using Fisher-Yates algorithm
+            const shuffleArray = (array) => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            };
+
+            // Shuffle the gallery items
+            shuffleArray(galleryItems);
+
+            // Populate the gallery
+            galleryItems.forEach(item => {
+                gallery.appendChild(createGalleryItem(item));
+            });
+
+            // Initialize Fancybox for the gallery
+            if (window.Fancybox) {
+                Fancybox.bind('[data-fancybox="gallery"]', {
+                    // You can add options here if needed
+                });
+            }
+        });
+    </script>
+</body>
+</html>
