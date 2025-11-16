@@ -1,0 +1,44 @@
+.pn-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.10);
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #222;
+  outline: 2px solid #222;
+  outline-offset: 2px;
+  filter: drop-shadow(0 1px 2px #222);
+  transition: box-shadow 0.2s, filter 0.2s;
+}
+.pn-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+.pn-card__caption {
+  background: #f3f4f6;
+  color: #111;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 8px 16px 0 16px;
+  border-bottom: 1.5px solid #222;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  transition: -webkit-line-clamp 0.2s;
+}
+.pn-card__caption:hover, .pn-card__caption:focus {
+  -webkit-line-clamp: 2;
+}
+@media (max-width: 400px) {
+  .pn-card__caption {
+    font-size: 0.95rem;
+    padding: 6px 8px 0 8px;
+  }
+}
