@@ -781,19 +781,25 @@
         audio.play().then(() => {
           setUI(true);
           fadeIn(0.72);
-        }).catch(() => { });
+          document.removeEventListener('click', onFirstInteraction);
+          document.removeEventListener('touchstart', onFirstInteraction);
+          document.removeEventListener('keydown', onFirstInteraction);
+        }).catch(() => { 
+          initiated = false; // Autoplay blocked, wait for user interaction
+        });
       };
 
-      // ── First user interaction → autoplay ──
+      // ── Autoplay fallback on interaction ──
       const onFirstInteraction = () => {
         startMusic();
-        document.removeEventListener('click', onFirstInteraction);
-        document.removeEventListener('touchstart', onFirstInteraction);
-        document.removeEventListener('keydown', onFirstInteraction);
       };
-      document.addEventListener('click', onFirstInteraction, { once: true });
-      document.addEventListener('touchstart', onFirstInteraction, { once: true });
-      document.addEventListener('keydown', onFirstInteraction, { once: true });
+      
+      // Attempt to autoplay immediately on load
+      startMusic();
+
+      document.addEventListener('click', onFirstInteraction);
+      document.addEventListener('touchstart', onFirstInteraction);
+      document.addEventListener('keydown', onFirstInteraction);
 
       // ── Click pill to pause/resume ──
       pill.addEventListener('click', e => {
