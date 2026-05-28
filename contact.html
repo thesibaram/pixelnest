@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | PixelNest - Sibaram Behera</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Freeman&family=Big+Shoulders+Inline+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Hello there, I'm Sibaram Behera – an intrepid explorer through the lens, on a relentless quest to capture the world's boundless wonders. Join me in unraveling the extraordinary through my lens.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 1v22M12 1h10M12 1v22M12 23H2'/%3E%3Cpath d='M22 12H2'/%3E%3Cpath d='M22 12v10M2 12V2'/%3E%3Crect x='2' y='2' width='20' height='20' rx='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Start - Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+  <!-- End - Fonts -->
+  <!-- Start - Fancybox Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- End - Fancybox Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: ["./dist/*.{html,js}"],
+      theme: {
+        extend:
+        {
+          fontFamily: {
+            'freeman': ['Freeman', 'sans-serif'],
+            'bigshoulders': ['Big Shoulders Inline Display', 'sans-serif'],
+            'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
+          },
+        },
+      },
+      plugins: [],
+    }
+  </script>
+</head>
+
+<body
+  class="dark:bg-black bg-white h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500">
+  <!-- Navbar -->
+  <header class="flex w-full overflow-hidden pt-10 pb-0">
+    <!-- Navbar -->
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+      <div class="container mx-auto px-5 md:px-20 flex flex-wrap items-center md:flex-no-wrap">
+        <div class="header-logo">
+          <a href="index.html" class="flex items-center justify-center space-x-2">
+            <!-- Logo SVG in black -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+              <path d="M22 12H2"></path>
+              <path d="M22 12v10M2 12V2"></path>
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+            </svg>
+            <!-- Text in black -->
+            <span class="text-3xl font-freeman" style="color:black;">PixelNest</span>
+          </a>
+        </div>
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+        </div>
+        <div id="menu" :class="open ? 'h-32' : 'h-0'"
+          class="w-full transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center md:overflow-visible">
+          <ul id="ulMenu"
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-2 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 border-0 md:border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-freeman text-2xl tap-highlight-transparent">PORTFOLIO
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="about_me.html" class="font-freeman text-2xl tap-highlight-transparent">ABOUT ME
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="contact.html"
+                class="font-freeman text-2xl tap-highlight-transparent text-primary-700 dark:text-primary-400">CONTACT
+                <span
+                  class="hidden md:block max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Content -->
+  <div class="container mx-auto font-freeman px-5 md:px-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+      <section>
+        <div class="max-w-screen-md">
+          <h1 class="text-4xl pt-10 pb-8"><b>CONTACT</b></h1>
+          <form class="space-y-8" id="contactForm">
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
+                email</label>
+              <input type="email" id="email" name="email"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full md:w-96 p-3 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                placeholder="example@gmail.com" required />
+            </div>
+            <div>
+              <label for="subject"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+              <input type="text" id="subject" name="subject"
+                class="block p-3 w-full md:w-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                placeholder="Let me know how I can help you" required />
+            </div>
+            <div>
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
+                message</label>
+              <textarea id="message" name="message" rows="4"
+                class="block p-3 w-full md:w-96 text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Leave a comment..." required></textarea>
+            </div>
+            <button type="submit"
+              class="py-3 px-5 text-sm font-medium text-center bg-black dark:bg-white text-white dark:text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+              Send message
+            </button>
+            <div id="formSuccess" style="display:none;color:green;font-weight:bold;margin-top:1rem;">Thank you! Your
+              message has been sent.</div>
+          </form>
+        </div>
+      </section>
+      <div class="flex relative">
+        <div class="flex relative">
+          <div
+            class="bg-white dark:bg-neutral-900 p-5 pb-20 m-6 md:m-12 shadow-lg border border-gray-100 dark:border-neutral-800 hover:rotate-0 transition duration-500 rotate-6 relative overflow-hidden">
+            <img
+              src="assets/images/CONNECT_001.jpeg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80"
+              alt="Scan and Connect" class="w-full h-auto object-cover block" />
+            <!-- Centered, responsive label at bottom-center of the image -->
+            <div class="absolute left-1/2 bottom-4 transform -translate-x-1/2">
+              <p class="text-center font-bold text-gray-900 dark:text-gray-100 px-4 py-1 rounded-md bg-white dark:bg-neutral-900"
+                style="backdrop-filter: blur(4px); font-size: clamp(1rem, 2.6vw, 2.25rem);">
+                Scan & Connect
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script for the LightBox -->
+  <script>
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+  <script src="fade_in.js"></script>
+  <script src="menu.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <a href="contact.html" class="flex items-center space-x-2" style="justify-content:center;display:flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-black dark:text-white">
+              <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+              <path d="M22 12H2"></path>
+              <path d="M22 12v10M2 12V2"></path>
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+            </svg>
+            <span class="text-2xl font-freeman">PixelNest</span>
+          </a>
+        </div>
+        <p style="font-family:'Freeman',sans-serif;font-size:1.1rem;text-align:center;margin-top:0.5rem;">In Every
+          Frame, A Heartbeat Lives On.</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about_me.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-heading">Connect</h3>
+        <ul class="social-links">
+          <li><a href="https://x.com/thesibaram_cla?t=q3gV4BTfJd8W_5g4sNxm6A&s=09" target="_blank"><i
+                class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a
+              href="https://www.linkedin.com/in/sibaram-eng?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/thesibaram.cla?utm_source=qr&igsh=YjltajhvbWhhdno1" target="_blank"><i
+                class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://github.com/thesibaram" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a
+              href="https://open.spotify.com/playlist/4WaZsUYmtf4eRsklDjxhx4?si=0757f49b46194f97&pt=69e4e7df7c329e3f177e943f3fa0e5ed"
+              target="_blank"><i class="fab fa-spotify"></i> Spotify</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        © 2025 Sibaram Behera. All rights reserved. <br>
+        <p>Made with <span class="heart-emoji">💜</span> for <span class="clara">Clara</span>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var subject = document.getElementById('subject').value.trim();
+    var message = document.getElementById('message').value.trim();
+    if (!email || !subject || !message) {
+      alert('Please fill out all fields.');
+      return;
+    }
+    document.getElementById('formSuccess').style.display = 'block';
+    this.reset();
+  });
+</script>
+
+<!-- Link Preview Meta -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Sibaram Behera | PixelNest">
+<meta property="og:description"
+  content="Get in touch with Sibaram Behera. Collaborations, inquiries, or just a coffee chat.">
+<meta property="og:url" content="https://thesibaram.github.io/pixelnest/contact.html">
+<meta property="og:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="PixelNest">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Sibaram Behera | PixelNest">
+<meta name="twitter:description"
+  content="Get in touch with Sibaram Behera. Collaborations, inquiries, or just a coffee chat.">
+<meta name="twitter:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+<meta name="twitter:creator" content="@thesibaram_cla">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Sibaram Behera",
+      "url": "https://thesibaram.github.io/pixelnest/contact.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Sibaram Behera",
+        "image": "https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg",
+        "sameAs": [
+          "https://x.com/thesibaram_cla",
+          "https://www.linkedin.com/in/sibaram-eng",
+          "https://www.instagram.com/thesibaram.cla",
+          "https://github.com/thesibaram"
+        ]
+      }
+    }
+    </script>

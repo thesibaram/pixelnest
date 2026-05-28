@@ -1,0 +1,490 @@
+/* GLOBAL BEST PRACTICE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--secondary-color);
+  /* Base color for the background */
+  /* --- CREATIVE ENHANCEMENT: Halftone Dot Pattern Effect --- */
+  /* This gives the page a creative newsprint/comic paper texture */
+  background-image: radial-gradient(var(--comic-shadow-color) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  /* Density of the dots */
+  /* CRITICAL FIX: Use the variable blend mode, which changes based on light/dark mode */
+  background-blend-mode: var(--dot-blend-mode);
+}
+
+/* --- Comic-Book Color Palette and Variables --- */
+:root {
+  /* Default (Light Mode) Colors */
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --text-color: #111;
+  --link-color: #E91E63;
+  /* Vibrant Magenta/Pink */
+  --accent-color: #FFEB3B;
+  /* Bright yellow */
+  --comic-border-color: #000;
+  --comic-shadow-color: #444;
+  /* Dark dots */
+  --dot-blend-mode: multiply;
+  /* Works well with light backgrounds */
+  --footer-bg: #222;
+  --footer-text-color: #fff;
+  --footer-border: #444;
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --text-color: #fff;
+    --link-color: #FF5252;
+    /* Bright Red/Coral */
+    --accent-color: #FFEB3B;
+    /* Bright yellow */
+    --comic-border-color: #fff;
+    --comic-shadow-color: #666;
+    /* Slightly darker dots for subtle look against white text */
+    --dot-blend-mode: screen;
+    /* FIX: 'screen' works with dark backgrounds to make the dots visible */
+    --footer-bg: #111;
+    --footer-text-color: #fff;
+    --footer-border: #555;
+  }
+}
+
+/* Header & Navbar */
+.header-logo a svg,
+.header-logo a span {
+  color: var(--primary-color) !important;
+  stroke: var(--primary-color) !important;
+  transition: color 0.5s ease-in-out, stroke 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Comic-Like Masonry Gallery Layout --- */
+.masonry-container {
+  column-count: 1;
+  column-gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .masonry-container {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-container {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+  /* Exaggerated, solid comic border and shadow */
+  border: 4px solid var(--comic-border-color);
+  border-radius: 0.25rem;
+  /* Sharper corners for a flatter look */
+  box-shadow: 8px 8px 0px var(--comic-shadow-color);
+  /* Subtle random rotation for a hand-drawn feel */
+  transform: scale(1) rotate(calc(var(--rotation, 0) * 1deg));
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease-in-out;
+  z-index: 1;
+  /* Ensure items can pop out over others */
+}
+
+/* Different rotations for each column item to create variety */
+.masonry-item:nth-child(2n) {
+  --rotation: -1;
+}
+
+.masonry-item:nth-child(3n) {
+  --rotation: 2;
+}
+
+.masonry-item:nth-child(5n) {
+  --rotation: -2;
+}
+
+.masonry-item:nth-child(7n) {
+  --rotation: 1;
+}
+
+.masonry-item:hover {
+  /* Scales up and straightens the image, as if it's popping out */
+  transform: scale(1.05) rotate(0deg);
+  /* Even more dramatic, hard shadow on hover */
+  box-shadow: 12px 12px 0px var(--comic-shadow-color);
+  z-index: 10;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Default style (for light mode) - Captions enhanced for 'sticker' look */
+.comic-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 1);
+  /* Pure white */
+  font-family: 'Freeman', sans-serif;
+  text-align: left;
+  color: #000;
+  /* Black text for contrast */
+  line-height: 1.0;
+  padding: 4px 8px;
+  /* Increased padding */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  /* --- CREATIVE ENHANCEMENT: Subtle, theme-aware glow --- */
+  text-shadow: 0 0 8px rgba(255, 235, 59, 0.7);
+  /* Soft yellow glow for light mode */
+  transition: all 0.3s ease-out;
+}
+
+/* Dark mode adaptation */
+@media (prefers-color-scheme: dark) {
+  .comic-caption {
+    background: rgba(0, 0, 0, 1);
+    /* Pure black */
+    color: #fff;
+    /* White text for contrast */
+    /* --- CREATIVE ENHANCEMENT: Adapted glow for dark mode --- */
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+    /* Warmer, more transparent glow */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .comic-caption {
+    line-height: 1.08;
+  }
+}
+
+/* --- 1. THEME VARIABLES (Dark & Light Mode) --- */
+
+:root {
+  /* --- LIGHT MODE (Base Theme) --- */
+  --main-bg: #F0F0F5;
+  /* Calm light background */
+  --text-color: #1a1a2e;
+  /* Dark text for high contrast */
+
+  /* Footer Theme Colors */
+  --footer-bg: #FFD95A;
+  /* Flat, vibrant yellow for a comic panel background */
+  --footer-text-color: #1a1a2e;
+  --link-color: #E63946;
+  /* Vibrant red for links */
+
+  /* Comic Style Elements */
+  --outline-color: #1a1a2e;
+  /* Thick black ink line */
+  --accent-color: #3366FF;
+  /* Blue pop shadow */
+}
+
+.dark-mode {
+  /* --- DARK MODE OVERRIDES --- */
+  --main-bg: #1A1A2E;
+  /* Deep space blue background */
+  --text-color: #E0FBFC;
+  /* Light text */
+
+  /* Footer Theme Colors */
+  --footer-bg: #3D5A80;
+  /* Muted, professional dark blue for footer */
+  --footer-text-color: #E0FBFC;
+  --link-color: #98C1D9;
+  /* Light blue/cyan for links */
+
+  /* Comic Style Elements */
+  --outline-color: #E0FBFC;
+  /* Light outline line */
+  --accent-color: #EE6C4D;
+  /* Coral/Orange pop shadow */
+}
+
+/* --- 2. GLOBAL STYLES & FONT IMPORT (Assuming Freeman is loaded, adding a comic fallback) --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --- 3. FOOTER SECTION - COMIC PANEL STYLE --- */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text-color);
+  padding: 4rem 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+
+  font-family: 'Freeman', sans-serif;
+
+  /* COMIC PANEL EFFECT: Thick border and offset shadow for a "lifted" look */
+  border: 4px solid var(--outline-color);
+  box-shadow: 8px 8px 0px 0px var(--outline-color);
+
+  transition: all 0.4s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 0 4rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  text-align: left;
+  color: var(--footer-text-color);
+}
+
+/* --- 4. LOGO STYLING --- */
+.footer-logo {
+  /* Using the existing Freeman font for consistency */
+  font-family: 'Freeman', sans-serif;
+  font-size: 2.5rem;
+  /* Bigger for impact */
+  margin-bottom: 1rem;
+}
+
+.footer-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--footer-text-color);
+  text-decoration: none;
+}
+
+.footer-logo svg {
+  width: 48px !important;
+  height: 48px !important;
+  stroke: var(--footer-text-color) !important;
+}
+
+.footer-logo span {
+  /* Branding color consistency */
+  color: var(--link-color) !important;
+  font-size: 2.5rem !important;
+  font-family: 'Freeman', sans-serif !important;
+}
+
+/* --- 5. HEADING STYLING (The BIG Comic Pop) --- */
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+
+  /* COMIC TEXT EFFECT: Outline + Pop Shadow */
+  color: var(--footer-bg);
+  /* Use BG color for the fill to make the outline stand out */
+  text-shadow:
+    -2px -2px 0 var(--outline-color),
+    2px -2px 0 var(--outline-color),
+    -2px 2px 0 var(--outline-color),
+    2px 2px 0 var(--outline-color),
+    4px 4px 0 var(--accent-color);
+  /* The signature comic pop shadow */
+}
+
+/* --- 6. LINK AND INTERACTION STYLING --- */
+.footer-links,
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.social-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--footer-text-color);
+  /* Text color instead of link color for flat design */
+  text-decoration: none;
+  font-family: 'Freeman', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+
+  /* Subtle comic link outline */
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.footer-links a:hover {
+  color: var(--link-color) !important;
+  /* Switch to vibrant link color on hover */
+  transform: translateX(4px);
+  /* Comic "slide" effect on hover */
+}
+
+.social-links a {
+  color: var(--footer-text-color);
+  font-size: 1.8rem;
+  /* Larger icons for visibility */
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease-out;
+}
+
+/* Social links use a subtle scale and color change on hover */
+.social-links a:hover {
+  color: var(--link-color) !important;
+  transform: scale(1.15) rotate(5deg);
+  /* Playful comic rotation */
+}
+
+/* --- 7. COPYRIGHT SECTION --- */
+.copyright {
+  text-align: center;
+  color: var(--footer-text-color);
+  font-size: 1.1rem;
+  padding-top: 2rem;
+  /* Thick border for a clean separation line */
+  border-top: 4px solid var(--outline-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px 0 20px;
+  font-weight: 500;
+}
+
+/* --- 8. UTILITY CLASSES --- */
+.heart-emoji {
+  display: inline-block;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  /* Stronger pulse */
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- CREATIVE ENHANCEMENT: Logo Styling --- */
+.clara {
+  /* Using 'Freeman' and removing the conflicting 'Sofia' */
+  font-family: 'Freeman', sans-serif !important;
+  font-size: 3.5rem;
+  /* Slightly bigger for more impact */
+  font-weight: 900;
+  /* Super bold */
+  color: var(--link-color);
+  /* Use the new vibrant link color */
+  margin-left: 4px;
+  line-height: 1;
+  /* Multi-layer text shadow for a dramatic comic book stroke/pop look */
+  text-shadow:
+    -2px -2px 0 #000,
+    /* Top-Left Stroke */
+    2px -2px 0 #000,
+    /* Top-Right Stroke */
+    -2px 2px 0 #000,
+    /* Bottom-Left Stroke */
+    2px 2px 0 #000,
+    /* Bottom-Right Stroke */
+    5px 5px 0px var(--accent-color);
+  /* Offset Shadow with Yellow Accent */
+}
+
+.text-color {
+  color: var(--text-color) !important;
+}
+
+/* --- 9. RESPONSIVE LAYOUT --- */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 2.5rem 0;
+    /* Reduce the comic shadow on small screens */
+    box-shadow: 4px 4px 0px 0px var(--outline-color);
+    border-width: 2px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    text-align: center;
+    min-width: unset;
+    align-items: center;
+  }
+
+  .footer-logo a {
+    justify-content: center;
+  }
+
+  .footer-links,
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Increased gap for better touch targets */
+  }
+
+  .footer-links li,
+  .social-links li {
+    margin: 0;
+  }
+}

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelNest | Portfolio - Sibaram Behera</title>
+  <meta name="description"
+    content="Explore the creative portfolio of Sibaram Behera at PixelNest. A visual journey through photography, design, and code, capturing moments that matter.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Freeman&family=Big+Shoulders+Inline+Display:wght@400;700&family=Sofia&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="stylesheet" href="styles.css"> <!-- Your external styles.css file -->
+  <link rel="canonical" href="https://thesibaram.github.io/pixelnest/index.html">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 1v22M12 1h10M12 1v22M12 23H2'/%3E%3Cpath d='M22 12H2'/%3E%3Cpath d='M22 12v10M2 12V2'/%3E%3Crect x='2' y='2' width='20' height='20' rx='3'/%3E%3C/svg%3E">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thesibaram.github.io/pixelnest/index.html">
+  <meta property="og:title" content="PixelNest | Portfolio - Sibaram Behera">
+  <meta property="og:description"
+    content="Explore the creative portfolio of Sibaram Behera at PixelNest. A visual journey through photography, design, and code, capturing moments that matter.">
+  <meta property="og:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="PixelNest">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://thesibaram.github.io/pixelnest/index.html">
+  <meta name="twitter:title" content="PixelNest | Portfolio - Sibaram Behera">
+  <meta name="twitter:description"
+    content="Explore the creative portfolio of Sibaram Behera at PixelNest. A visual journey through photography, design, and code, capturing moments that matter.">
+  <meta name="twitter:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
+  <meta name="twitter:creator" content="@thesibaram_cla">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PixelNest",
+    "url": "https://thesibaram.github.io/pixelnest/index.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sibaram Behera",
+      "url": "https://thesibaram.github.io/pixelnest/about_me.html"
+    },
+    "description": "Creative portfolio of Sibaram Behera showcasing photography and design.",
+    "image": "https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg"
+  }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-black text-black dark:text-white px-5 md:px-20">
+
+  <!-- ===== PRELOADER OVERLAY ===== -->
+  <div id="preloader" style="
+    position: fixed; inset: 0; z-index: 9999;
+    background: #fff;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  ">
+    <!-- Comic halftone dots background -->
+    <div style="
+      position:absolute;inset:0;
+      background-image: radial-gradient(#ddd 1.5px, transparent 1.5px);
+      background-size: 10px 10px;
+      opacity: 0.6;
+    "></div>
+
+    <!-- Logo + Title -->
+    <div style="position:relative;text-align:center;margin-bottom:2.5rem;">
+      <svg id="preloader-logo" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none"
+        stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        style="animation: preloader-spin 2s linear infinite; display:block; margin:0 auto 1rem;">
+        <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+        <path d="M22 12H2"></path>
+        <path d="M22 12v10M2 12V2"></path>
+        <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+      </svg>
+      <div style="font-family:'Freeman',sans-serif;font-size:3rem;font-weight:900;letter-spacing:1px;color:#000;">
+        PixelNest</div>
+      <div style="font-family:'Freeman',sans-serif;font-size:1rem;color:#555;margin-top:0.25rem;">Developing your
+        memories...</div>
+    </div>
+
+    <!-- Progress bar track -->
+    <div style="
+      position:relative;
+      width: min(420px, 80vw);
+      height: 18px;
+      background: #eee;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 4px 4px 0 #000;
+      overflow: hidden;
+    ">
+      <div id="preloader-bar" style="
+        height:100%;
+        width:0%;
+        background: linear-gradient(90deg, #FFEB3B, #E91E63);
+        border-radius: 999px;
+        transition: width 0.25s ease-out;
+      "></div>
+    </div>
+
+    <!-- Percentage counter -->
+    <div id="preloader-pct" style="
+      font-family:'Freeman',sans-serif;
+      font-size:1.4rem;
+      font-weight:900;
+      color:#000;
+      margin-top:1rem;
+      letter-spacing:1px;
+    ">0 / 0</div>
+
+    <style>
+      @keyframes preloader-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        #preloader {
+          background: #000 !important;
+        }
+
+        #preloader svg {
+          stroke: #fff !important;
+        }
+
+        #preloader>div:first-child {
+          background-image: radial-gradient(#333 1.5px, transparent 1.5px) !important;
+        }
+
+        #preloader>div:nth-child(2)>div:first-child {
+          color: #fff !important;
+        }
+
+        #preloader>div:nth-child(2)>div:nth-child(2) {
+          color: #aaa !important;
+        }
+
+        #preloader-bar {
+          background: linear-gradient(90deg, #FFEB3B, #FF5252) !important;
+        }
+
+        #preloader-pct {
+          color: #fff !important;
+        }
+      }
+    </style>
+  </div>
+  <!-- ===== END PRELOADER ===== -->
+
+  <!-- Navbar -->
+  <header class="flex w-full overflow-hidden pt-10 pb-0">
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+      <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
+        <div class="header-logo">
+          <a href="index.html" class="flex items-center justify-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+              <path d="M22 12H2"></path>
+              <path d="M22 12v10M2 12V2"></path>
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+            </svg>
+            <span class="text-3xl font-freeman">PixelNest</span>
+          </a>
+        </div>
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+        </div>
+        <div id="menu" :class="open ? 'h-32' : 'h-0'"
+          class="w-full transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center md:overflow-visible">
+          <ul id="ulMenu"
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-2 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-freeman text-2xl tap-highlight-transparent">PORTFOLIO
+                <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="about_me.html" class="font-freeman text-2xl tap-highlight-transparent">ABOUT ME
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="contact.html" class="font-freeman text-2xl tap-highlight-transparent">CONTACT
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="container mx-auto">
+    <h1 class="text-4xl pt-10 pb-8 font-bold font-bigshoulders">PORTFOLIO</h1>
+    <section class="text-neutral-700">
+      <div id="masonry-gallery" class="masonry-container">
+        <!-- Images will be dynamically inserted here by JavaScript -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="site-footer" style="width:100vw; position:relative; left:50%; transform:translateX(-50%);">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <a href="index.html" class="flex items-center space-x-2" style="justify-content:center;display:flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-black dark:text-white">
+              <path d="M12 1v22M12 1h10M12 1v22M12 23H2"></path>
+              <path d="M22 12H2"></path>
+              <path d="M22 12v10M2 12V2"></path>
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+            </svg>
+            <span class="text-2xl font-freeman">PixelNest</span>
+          </a>
+        </div>
+        <p style="font-family:'Freeman',sans-serif;font-size:1.1rem;text-align:center;margin-top:0.5rem;">In Every
+          Frame, A Heartbeat Lives On.</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about_me.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Connect</h3>
+        <ul class="social-links">
+          <li><a href="https://x.com/thesibaram_cla?t=q3gV4BTfJd8W_5g4sNxm6A&s=09" target="_blank"><i
+                class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a
+              href="https://www.linkedin.com/in/sibaram-eng?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/thesibaram.cla?utm_source=qr&igsh=YjltajhvbWhhdno1" target="_blank"><i
+                class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://github.com/thesibaram" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a
+              href="https://open.spotify.com/playlist/4WaZsUYmtf4eRsklDjxhx4?si=0757f49b46194f97&pt=69e4e7df7c329e3f177e943f3fa0e5ed"
+              target="_blank"><i class="fab fa-spotify"></i> Spotify</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        © 2025 Sibaram Behera. All rights reserved. <br>
+        <p>Made with <span class="heart-emoji">💜</span> for <span class="clara">Clara</span>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script to dynamically generate images and handle the lightbox -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gallery = document.getElementById('masonry-gallery');
+      const preloader = document.getElementById('preloader');
+      const bar = document.getElementById('preloader-bar');
+      const pctLabel = document.getElementById('preloader-pct');
+
+      // ── Gallery data ──────────────────────────────────────────────────────
+      const galleryItems = [
+        { path: 'assets/images/OTTYHOLIDAY_001.jpg', caption: "This is what 'getting away from it all' looks like." },
+        { path: 'assets/images/OTTYHOLIDAY_002.jpg', caption: "Waking up to this view is the best kind of alarm clock." },
+        { path: 'assets/images/OTTYHOLIDAY_003.jpg', caption: "Some moments are just meant to be." },
+        { path: 'assets/images/OTTYHOLIDAY_004.jpg', caption: "The best kind of therapy is a road trip with friends." },
+        { path: 'assets/images/OTTYHOLIDAY_005.jpg', caption: "On the less traveled path, with my little companion." },
+        { path: 'assets/images/OTTYHOLIDAY_006.jpg', caption: "The world is vast, and I'm just a small part of it." },
+        { path: 'assets/images/OTTYHOLIDAY_007.jpg', caption: "Fueling up for the next adventure." },
+        { path: 'assets/images/OTTYHOLIDAY_008.png', caption: "Some of the best memories are made around a table." },
+        { path: 'assets/images/OTTYHOLIDAY_009.jpg', caption: "The sky's watercolor masterpiece." },
+        { path: 'assets/images/OTTYHOLIDAY_010.jpg', caption: "The perfect end to a day of exploring." },
+        { path: 'assets/images/OTTYHOLIDAY_011.jpg', caption: "A million little lights, a million little dreams." },
+        { path: 'assets/images/OTTYHOLIDAY_012.jpg', caption: "Ooty's traffic jam." },
+        { path: 'assets/images/OTTYHOLIDAY_013.jpg', caption: "The mountain view never gets old." },
+        { path: 'assets/images/OTTYHOLIDAY_014.jpg', caption: "Where will this road take us next?" },
+        { path: 'assets/images/OTTYHOLIDAY_015.png', caption: "The perfect blend of nature and city life." },
+        { path: 'assets/images/OTTYHOLIDAY_016.jpg', caption: "Soaking up the good vibes." },
+        { path: 'assets/images/OTTYHOLIDAY_017.png', caption: "The beautiful chaos of a mountain town." },
+        { path: 'assets/images/OTTYHOLIDAY_018.jpg', caption: "Some of the best memories are the unplanned ones." },
+        { path: 'assets/images/SIH_ 001.jpg', caption: "The focus and determination of a true creator." },
+        { path: 'assets/images/SIH_ 002.jpg', caption: "Working through the night, guided by the stars." },
+        { path: 'assets/images/SIH_ 003.png', caption: "A moment of triumph to remember forever." },
+        { path: 'assets/images/SIH_ 004.jpg', caption: "A moment of inspiration that could change everything." },
+        { path: 'assets/images/Hackathon_001.jpg', caption: "The exact moment a chaotic concept finally makes sense." },
+        { path: 'assets/images/Hackathon_002.jpg', caption: "Under pressure, but completely in our element." },
+        { path: 'assets/images/Hackathon_003.jpg', caption: "From a rough sketch to a functioning reality." },
+        { path: 'assets/images/Hackathon_004.jpg', caption: "Chasing ideas under the quiet glow of midnight." },
+        { path: 'assets/images/Hackathon_005.jpg', caption: "Racing the clock to bring the vision to life." },
+        { path: 'assets/images/Hackathon_006.jpg', caption: "Quiet golden hour rewards after a sleepless night of creating." },
+        { path: 'assets/images/Accessories.jpg', caption: "A gentle reminder that self-care matters." },
+        { path: 'assets/images/Book.jpg', caption: "A little confidence can go a long way." },
+        { path: 'assets/images/Classroom.jpg', caption: "Learning is a journey, not a destination." },
+        { path: 'assets/images/Dress.jpeg', caption: "Becoming the best version of me, one day at a time." },
+        { path: 'assets/images/VMG.jpg', caption: "The hustle and bustle of everyday life." },
+        { path: 'assets/images/COLLEGE FESTIVAL_001.jpg', caption: "Where tradition meets the stage." },
+        { path: 'assets/images/COLLEGE FESTIVAL_002.jpg', caption: "The energy of a thousand hearts." },
+        { path: 'assets/images/COLLEGE FESTIVAL_003.jpg', caption: "The crowd was silent, and her voice was everything." },
+        { path: 'assets/images/GOODNIGHT.png', caption: "Ending the day with a smile and a line of code." },
+        { path: 'assets/images/IMG20250606223129.jpg', caption: "Finding a bed anywhere is a big deal." },
+        { path: 'assets/images/OTTYHOLIDAY_ 019.jpg', caption: "Finding peace in a beautiful view." },
+        { path: 'assets/images/OTTYHOLIDAY_ 020.jpg', caption: "The town that dreams are made of." },
+        { path: 'assets/images/OTTYHOLIDAY_ 021.png', caption: "The cheerful sounds of home." },
+        { path: 'assets/images/OTTYHOLIDAY_ 022.jpg', caption: "The beginning of a great memory." },
+        { path: 'assets/images/OTTYHOLIDAY_ 023.jpg', caption: "The journey is always better with the right wheels." },
+        { path: 'assets/images/OTTYHOLIDAY_ 024.jpg', caption: "The simple beauty of a day in Ooty." },
+        { path: 'assets/images/OTTYHOLIDAY_ 025.png', caption: "My other car is a scooter." },
+        { path: 'assets/images/OTTYHOLIDAY_ 026.png', caption: "The colorful houses on the hillside made this view extra special." },
+        { path: 'assets/images/OTTYHOLIDAY_ 027.jpg', caption: "When you're hungry, but the view is too good to leave." },
+        { path: 'assets/images/PRATICLE.jpg', caption: "A desk full of dreams and a little bit of magic." },
+        { path: 'assets/images/SIH_005.png', caption: "The calm before the storm." },
+        { path: 'assets/images/SIH_006.jpg', caption: "The king of the yard." },
+        { path: 'assets/images/SIH_007.jpg', caption: "The gateway to a new beginning." },
+        { path: 'assets/images/SIH_008.jpg', caption: "NexGen was never just a team name." },
+        { path: 'assets/images/SIH_009.jpg', caption: "From silent hustle to visible achievement." },
+        { path: 'assets/images/THEONEWAY.jpg', caption: "Every path has its own story." },
+        { path: 'assets/images/THEPERSON.jpg', caption: "Two wheels and a whole lot of freedom." },
+        { path: 'assets/images/gopalpur_beach_001.jpg', caption: "Love shines brightest beside the waves." },
+        { path: 'assets/images/gopalpur_beach_002.jpg', caption: "Smiles become real near the ocean." },
+        { path: 'assets/images/gopalpur_beach_003.jpg', caption: "Found a new travel buddy tonight." },
+        { path: 'assets/images/gopalpur_beach_004.jpg', caption: "Happiness feels warmer when shared together." },
+        { path: 'assets/images/CLASSROOM_ 001.jpg', caption: "The passion of a teacher shines through." },
+        { path: 'assets/images/CLASSROOM_ 002.jpg', caption: "Some people just make difficult things look easy." },
+        { path: 'assets/images/LAPTOP_ 001.jpg', caption: "Finding beauty in the logic and structure of code." },
+        { path: 'assets/images/LAPTOP_ 002.jpg', caption: "The small things that make up a big project." },
+        { path: 'assets/images/LAPTOP_ 003.jpg', caption: "My laptop's personality is better than mine." },
+        { path: 'assets/images/LAPTOP_004.jpg', caption: "Quiet rooms often build loud ambitions." },
+        { path: 'assets/images/STUDY_ 001.jpg', caption: "The late-night hustle." },
+        { path: 'assets/images/TRAVELLING_ 001.jpg', caption: "The best views are from a window seat." },
+        { path: 'assets/images/TRAVELLING_ 002.jpg', caption: "The best views are from the open door of a train." },
+        { path: 'assets/images/TRAVELLING_ 004.jpg', caption: "The little things that make life beautiful." },
+        { path: 'assets/images/TRAVELLING_ 005.jpg', caption: "The best way to see the world is on two wheels." },
+        { path: 'assets/images/TRAVELLING_ 006.jpg', caption: "The stars are out, but the city lights are brighter." },
+        { path: 'assets/images/TRAVELLING_ 007.jpg', caption: "A beautiful moment of a city that never sleeps." },
+        { path: 'assets/images/TRAVELLING_ 008.jpg', caption: "A simple moment on a beautiful day." },
+        { path: 'assets/images/TRAVELLING_ 009.jpg', caption: "The hard work that goes into a masterpiece." },
+        { path: 'assets/images/TRAVELLING_ 010.jpg', caption: " The beginning of a new adventure." },
+        { path: 'assets/images/TRAVELLING_011.jpg', caption: "Lost between playlists and passing trees." },
+        { path: 'assets/images/TRAVELLING_012.jpg', caption: "Calm faces tell the loudest stories." },
+        { path: 'assets/images/TRAVELLING_013.jpg', caption: "Some delays feel heavier than time." },
+        { path: 'assets/images/TRAVELLING_014.jpg', caption: "Some roads remember who you were." },
+        { path: 'assets/images/TRAVELLING_015.jpg', caption: "Introverts call this premium seating experience." },
+        { path: 'assets/images/TRAVELLING_016.jpg', caption: "Different angles reveal different versions of us." },
+        { path: 'assets/images/TRAVELLING_017.jpg', caption: "Even roadsides try dressing beautifully sometimes." },
+        { path: 'assets/images/TRAVELLING_018.jpg', caption: "Sky really showing off today honestly." },
+        { path: 'assets/images/COLLEGE_001.jpg', caption: "The sky is a canvas, and the trees are the art." },
+        { path: 'assets/images/COLLEGE_002.jpg', caption: "A beautiful day for a walk with friends." },
+        { path: 'assets/images/Hostel_mess_food_001.jpg', caption: "Instant happiness, just add sauce." },
+        { path: 'assets/images/Hostel_mess_food_002.jpg', caption: "When you can't decide, get a bit of everything." },
+        { path: 'assets/images/Hostel_mess_food_003.jpg', caption: "This plate is a masterpiece." },
+        { path: 'assets/images/Hostel_mess_food_004.jpg', caption: "Simple food, great taste." },
+        { path: 'assets/images/Hostel_mess_food_005.jpg', caption: "Yes, the chili is mandatory." },
+        { path: 'assets/images/Hostel_mess_food_006.jpg', caption: "The kind of meal that makes you feel instantly better." },
+        { path: 'assets/images/Hostel_mess_food_007.jpg', caption: "I deserve this... and that little sweet too." },
+        { path: 'assets/images/Handbook.jpg', caption: "Learning doesn't have to stay in the classroom." },
+        { path: 'assets/images/A_Person_Thinking.jpg', caption: "Finding clarity in a moment of quiet reflection." },
+        { path: 'assets/images/Sony_Headphone_Wh-ch720n.jpg', caption: "New noise cancellation, who dis?" },
+        { path: 'assets/images/Book_Fair.jpg', caption: "Surrounded by endless stories and endless learning." },
+        { path: 'assets/images/Ganesh_Puja.jpg', caption: "May the remover of obstacles bless your new beginnings." },
+        { path: 'assets/images/Time_Is_Important.jpg', caption: "Time is the most valuable asset." },
+        { path: 'assets/images/Dinner Party.jpg', caption: "Warning: This photo may cause extreme hunger." },
+        { path: 'assets/images/Exam_End.jpg', caption: "Error 404: Brain not found. Currently recharging." },
+        { path: 'assets/images/Hostel_mess_food_009.jpg', caption: "The standard student survival kit." },
+        { path: 'assets/images/Creatvie.jpg', caption: "Focus on what matters, even if it's just the binding." },
+        { path: 'assets/images/Creatvie.jpg', caption: "Focus on what matters, even if it's just the binding." },
+        { path: 'assets/images/Creatvie.jpg', caption: "Focus on what matters, even if it's just the binding." },
+        { path: 'assets/images/random_moment_001.jpg', caption: "Even sunsets know how to stay dramatic." },
+        { path: 'assets/images/random_moment_002.jpg', caption: "The moon really loves stealing attention tonight." },
+        { path: 'assets/images/random_moment_003.jpg', caption: "Broken things still deserve another chance." },
+        { path: 'assets/images/Dodo\'s Handwriting Notes.jpg', caption: "Kept not for marks, but for memory." }
+      ];
+
+      // ── Helpers ───────────────────────────────────────────────────────────
+      const shuffleArray = (arr) => {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      };
+
+      const createGalleryItem = (item) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'masonry-item';
+
+        const link = document.createElement('a');
+        link.href = item.path;
+        link.setAttribute('data-fancybox', 'gallery');
+
+        const img = document.createElement('img');
+        // Images are already cached by the preloader — use eager for instant paint
+        img.src = item.path;
+        img.alt = item.caption;
+        img.loading = 'eager';
+        img.decoding = 'sync';
+        img.className = 'block h-full w-full object-cover object-center';
+
+        const captionOverlay = document.createElement('div');
+        captionOverlay.className = 'comic-caption';
+        captionOverlay.textContent = item.caption;
+
+        link.appendChild(img);
+        galleryItem.appendChild(link);
+        galleryItem.appendChild(captionOverlay);
+        return galleryItem;
+      };
+
+      // ── PRELOAD ALL IMAGES, then reveal gallery ───────────────────────────
+      // Deduplicate paths so the same file isn't fetched twice
+      const uniquePaths = [...new Set(galleryItems.map(i => i.path))];
+      const total = uniquePaths.length;
+      let loaded = 0;
+
+      pctLabel.textContent = `0 / ${total}`;
+
+      const onImageDone = () => {
+        loaded++;
+        const pct = Math.round((loaded / total) * 100);
+        bar.style.width = pct + '%';
+        pctLabel.textContent = `${loaded} / ${total}`;
+
+        if (loaded >= total) {
+          // Short pause so the user sees 100%, then reveal
+          setTimeout(revealGallery, 350);
+        }
+      };
+
+      const revealGallery = () => {
+        // Shuffle & build the DOM while preloader is still visible
+        shuffleArray(galleryItems);
+        galleryItems.forEach(item => gallery.appendChild(createGalleryItem(item)));
+
+        // Init Fancybox
+        if (window.Fancybox) {
+          Fancybox.bind('[data-fancybox="gallery"]', {});
+        }
+
+        // Fade out preloader, then remove it from DOM
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        setTimeout(() => preloader.remove(), 650);
+
+        // Fade in the page content
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { document.body.style.opacity = '1'; });
+        });
+      };
+
+      // Fire off all preload requests in parallel
+      uniquePaths.forEach(path => {
+        const img = new Image();
+        img.onload = onImageDone;
+        img.onerror = onImageDone; // count failures too so we never get stuck
+        img.src = path;
+      });
+    });
+  </script>
+
+  <!-- ===== MUSIC PLAYER ===== -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- THE PILL — bottom-center minimal player -->
+  <div id="mpill" title="Click to pause · Space to toggle" role="button" aria-label="Music player">
+    <!-- Left: animated waveform -->
+    <div id="mpill-waves">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <!-- Center: scrolling song text -->
+    <div id="mpill-track">
+      <span id="mpill-marquee">Clouds&nbsp;&nbsp;·&nbsp;&nbsp;JVKE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <!-- Right: time -->
+    <div id="mpill-time"><span id="mpill-cur">0:00</span></div>
+    <!-- Bottom edge: progress line -->
+    <div id="mpill-prog">
+      <div id="mpill-fill"></div>
+    </div>
+  </div>
+
+  <style>
+    /* ─────────────────────────────────────────
+       THE PILL — crazy minimalist music player
+    ───────────────────────────────────────── */
+    #mpill {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9100;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(8, 8, 8, 0.82);
+      backdrop-filter: blur(20px) saturate(1.6);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+      color: #fff;
+      font-family: 'Freeman', sans-serif;
+      /* Appear from bottom */
+      animation: pill-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      transition: box-shadow 0.3s ease, border-color 0.4s ease;
+    }
+
+    @keyframes pill-enter {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px) scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+      }
+    }
+
+    /* Playing glow */
+    #mpill.playing {
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 0 28px rgba(120, 100, 255, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    #mpill:hover {
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(120, 100, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #mpill:active {
+      transform: translateX(-50%) scale(0.97);
+    }
+
+    /* ── Waveform bars ── */
+    #mpill-waves {
+      display: flex;
+      align-items: center;
+      gap: 2.5px;
+      flex-shrink: 0;
+      height: 18px;
+    }
+
+    #mpill-waves span {
+      display: block;
+      width: 2.5px;
+      border-radius: 99px;
+      background: #fff;
+      transform-origin: center;
+      animation: wave 0.9s ease-in-out infinite alternate;
+    }
+
+    #mpill-waves span:nth-child(1) {
+      height: 6px;
+      animation-delay: 0s;
+      animation-duration: 0.75s;
+    }
+
+    #mpill-waves span:nth-child(2) {
+      height: 14px;
+      animation-delay: 0.12s;
+      animation-duration: 0.9s;
+    }
+
+    #mpill-waves span:nth-child(3) {
+      height: 10px;
+      animation-delay: 0.24s;
+      animation-duration: 0.65s;
+    }
+
+    #mpill-waves span:nth-child(4) {
+      height: 16px;
+      animation-delay: 0.1s;
+      animation-duration: 1.1s;
+    }
+
+    #mpill-waves span:nth-child(5) {
+      height: 7px;
+      animation-delay: 0.3s;
+      animation-duration: 0.8s;
+    }
+
+    @keyframes wave {
+      0% {
+        transform: scaleY(0.25);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    /* Freeze bars when paused */
+    #mpill.paused #mpill-waves span {
+      animation-play-state: paused;
+      opacity: 0.35;
+    }
+
+    /* ── Song marquee ── */
+    #mpill-track {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.85);
+      flex: 1;
+      min-width: 0;
+      mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    #mpill-marquee {
+      display: inline-block;
+      animation: marquee 9s linear infinite;
+    }
+
+    #mpill.paused #mpill-marquee {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── Time ── */
+    #mpill-time {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Progress edge line ── */
+    #mpill-prog {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    #mpill-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #a78bfa, #f472b6);
+      border-radius: 999px;
+      transition: width 0.4s linear;
+    }
+
+    /* ── Paused state dim ── */
+    #mpill.paused {
+      opacity: 0.72;
+    }
+
+    #mpill.paused:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    (function () {
+      const pill = document.getElementById('mpill');
+      const audio = document.getElementById('bg-music');
+      const waveBars = document.getElementById('mpill-waves');
+      const fill = document.getElementById('mpill-fill');
+      const curEl = document.getElementById('mpill-cur');
+      // Duplicate marquee text for seamless loop
+      const marquee = document.getElementById('mpill-marquee');
+      marquee.textContent = 'Clouds  ·  JVKE      Clouds  ·  JVKE      ';
+
+      let playing = false;
+      let initiated = false;
+      let fadeTimer = null;
+
+      // ── Format mm:ss ──
+      const fmt = s => {
+        if (!isFinite(s)) return '0:00';
+        return `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+      };
+
+      // ── Smooth fade in ──
+      const fadeIn = (to = 0.72) => {
+        clearInterval(fadeTimer);
+        audio.volume = 0;
+        fadeTimer = setInterval(() => {
+          if (audio.volume < to - 0.02) { audio.volume = Math.min(audio.volume + 0.025, to); }
+          else { audio.volume = to; clearInterval(fadeTimer); }
+        }, 55);
+      };
+
+      // ── Smooth fade out ──
+      const fadeOut = cb => {
+        clearInterval(fadeTimer);
+        fadeTimer = setInterval(() => {
+          if (audio.volume > 0.03) { audio.volume = Math.max(audio.volume - 0.04, 0); }
+          else { audio.volume = 0; clearInterval(fadeTimer); cb && cb(); }
+        }, 45);
+      };
+
+      // ── Update UI ──
+      const setUI = (state) => {
+        playing = state;
+        pill.classList.toggle('playing', state);
+        pill.classList.toggle('paused', !state);
+      };
+
+      // ── Start playback ──
+      const startMusic = () => {
+        if (initiated) return;
+        initiated = true;
+        audio.currentTime = 8; // Best intro beat of Clouds
+        audio.play().then(() => {
+          setUI(true);
+          fadeIn(0.72);
+        }).catch(() => { });
+      };
+
+      // ── First user interaction → autoplay ──
+      const onFirstInteraction = () => {
+        startMusic();
+        document.removeEventListener('click', onFirstInteraction);
+        document.removeEventListener('touchstart', onFirstInteraction);
+        document.removeEventListener('keydown', onFirstInteraction);
+      };
+      document.addEventListener('click', onFirstInteraction, { once: true });
+      document.addEventListener('touchstart', onFirstInteraction, { once: true });
+      document.addEventListener('keydown', onFirstInteraction, { once: true });
+
+      // ── Click pill to pause/resume ──
+      pill.addEventListener('click', e => {
+        e.stopPropagation(); // don't re-trigger first-interaction
+        if (!initiated) { startMusic(); return; }
+        if (playing) {
+          fadeOut(() => { audio.pause(); setUI(false); });
+        } else {
+          audio.play().then(() => { setUI(true); fadeIn(0.72); }).catch(() => { });
+        }
+      });
+
+      // ── Space bar shortcut ──
+      document.addEventListener('keydown', e => {
+        const tag = document.activeElement.tagName;
+        if (e.code === 'Space' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+          e.preventDefault();
+          pill.click();
+        }
+      });
+
+      // ── Progress ──
+      audio.addEventListener('timeupdate', () => {
+        if (!audio.duration || !isFinite(audio.duration)) return;
+        fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        curEl.textContent = fmt(audio.currentTime);
+      });
+
+      // ── Seek by clicking pill body ──
+      pill.addEventListener('click', e => {
+        if (!audio.duration) return;
+        const rect = pill.getBoundingClientRect();
+        const ratio = (e.clientX - rect.left) / rect.width;
+        // Only seek if clicking the right 60% (avoids conflict with pause)
+        if (ratio > 0.4) audio.currentTime = ratio * audio.duration;
+      });
+
+      // ── Loop ended ──
+      audio.addEventListener('ended', () => setUI(false));
+    })();
+  </script>
+  <!-- ===== END MUSIC PLAYER ===== -->
+
+</body>
+
+</html>
